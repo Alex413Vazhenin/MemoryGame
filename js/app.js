@@ -200,10 +200,10 @@ var onClick = function() {
             updateMoves();
 
             if (checkMatch()) {
-                setTimeout(setMatch, 150);
+                setTimeout(setMatch, 350);
 
             } else {
-                setTimeout(resetOpen, 300);
+                setTimeout(resetOpen, 650);
 
             }
         }
