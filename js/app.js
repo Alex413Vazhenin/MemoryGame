@@ -2,10 +2,9 @@
  * Create a list that holds all cards in the deck
  */
 
-var cardDeck = ["fa-diamond", "fa-diamond", "fa-paper-plane-o", "fa-paper-plane-o", "fa-anchor", "fa-anchor",
-           "fa-bolt", "fa-bolt", "fa-cube", "fa-cube", "fa-leaf", "fa-leaf",
-           "fa-bicycle", "fa-bicycle", "fa-bomb", "fa-bomb"];
-
+var cards = ["fa-diamond", "fa-paper-plane-o", "fa-anchor", "fa-bolt", "fa-cube", "fa-leaf",
+           "fa-bicycle", "fa-bomb"];
+var cardDeck = cards.concat(cards)
 // Game variables
 var score = 3;
 var moves = 0;
@@ -27,7 +26,7 @@ var modal = $("#victory-modal");
 var timerStart = function() {
   if (timer.seconds === 59) {
     timer.minutes++;
-    timer.seconds >= 0;
+    timer.seconds = 0;
   } else {
     timer.seconds++;
   }
@@ -181,10 +180,6 @@ function openCard(card) {
 
 // Game mechanics
 var onClick = function() {
-/*/    if(timer.seconds == 0 && timer.minutes == 0){
-    resetTimer();
-    }
-/*/
     if (game_started == false) {
         game_started = true;
         resetTimer();
